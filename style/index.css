@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--main-bg-color);
+}
+
+/* Sticky Header and Navbar */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--main-bg-color);
+    z-index: 1000;
+    color: var(--main-text-color);
+    text-align: center;
+}
+
+.sticky-header .header-content {
+    padding: 20px 0;
+}
+
+.sticky-header .navbar {
+    background-color: var(--main-bg-color);
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.sticky-header .navbar ul {
+    list-style-type: none;
+}
+
+.sticky-header .navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.sticky-header .navbar ul li a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.sticky-header .navbar ul li a:hover {
+    color: var(--price-color);
+}
+
+/* General Header Styling */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.social-media a {
+    color: var(--main-text-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Menu Section Styling */
+.menu-section {
+    padding: 40px;
+    padding-left: 60px!important;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 30%;
+    margin: 10px;
+}
+
+.menu h2 {
+    font-size: 2rem;
+    color: var(--main-color);
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .menu-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        width: 45%; /* Two columns on tablets and small screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%; /* Single column on mobile */
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .menu h2 {
+        font-size: 1.75rem;
+    }
+
+    .menu li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Food Menu List */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    justify-content: space-between; /* Align name on left and price on right */
+    padding: 10px 0; /* Add some space between items */
+    border-bottom: 1px solid #ddd; /* Add a line to separate items */
+}
+
+/* Food Name */
+.food-name {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Food Price */
+.food-price {
+    font-size: 1.2rem;
+    color: #333;
+}
+.food-price::after{
+    content: " UZS";
+}
+/* Menu Headers */
+.menu h2 {
+    font-size: 2rem;
+    color: #262a2f;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 30%;
+    margin: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .menu {
+        width: 45%; /* Two columns on tablets and small screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%; /* Single column on mobile */
+    }
+}
+.fmodal{
+    position: fixed;
+    top: 0;
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+    /* background: transparent(90%); */
+    background: rgba(9, 9, 9, 0.625);
+    display: flex;
+    /* backdrop-filter: ; */
+}
+.fmodal .fModalImg{
+    width: 100%;
+    height: 100%;
+    z-index: 1101;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    place-items: center;
+}
+.fmodal .foodProCard{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width: 80%;
+}
+.fmodal img{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.fmodal .cross{
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.fmodal.hide{
+    display: none;
+}
+.fdescription{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+#fMtitle{
+    font-size: 1.2rem;
+    padding: 10px;
+    color: #282828;
+    z-index: 1101;
+}
+#fMdesc{
+    font-size: 1rem;
+    padding: 10px;
+    color: var(--price-color);
+    z-index: 1101;
+}
+#timing{
+    padding: 0px 10px;
+    color: #6d7175;
+}
+.menu details{
+    width: 100%;
+    transition-duration: ease .5s;
+}
+.menu details summary{
+    width: 100%;
+    padding-left: .5rem;
+    list-style: none;
+}
+.menu details summary h4{
+    width: 100%;
+}
+.menu details summary i{
+    font-size: 3rem;
+    margin-left: -3.4rem;
+    color: var(--main-color);
+}

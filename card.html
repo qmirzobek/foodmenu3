@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .fcard{
+            max-width: 200px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+            padding-bottom: 20px;
+
+        }
+        .fimg{
+            border-radius: 10px 10px 0 0;
+
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            object-fit: cover;
+            object-position: center;
+        }
+        .fimg img{
+            width: 100%;
+            height: 100%;
+        }
+        .fdescription {
+            padding: 0 10px;
+        }
+        .fdescription .ftitle{
+            font-size: 1.2rem;
+            padding: 10px 0;
+        }
+        .fdescription .fprice{
+        
+            font-size: 1.2rem;
+            text-align: center;
+            place-items: center;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="fcard">
+        <div class="fimg">
+            <img src="assets/img/food3.jpg" alt="">
+        </div>
+        <div class="fdescription">
+            <div class="ftitle"><h3>Name</h3></div>
+            <div class="fprice">16.000UZS</div>
+        </div>
+    </div>
+</body>
+</html>

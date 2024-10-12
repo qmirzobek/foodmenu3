@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 2.0</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            max-width: 620px;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+        .menu{
+            margin: 0;
+            padding: 10px;
+            padding-top: 30px;
+            
+        }
+        .menu-section{
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            /* border: 2px solid #333; */
+            box-shadow: 0px 4px 6px #3333339c;
+            margin-bottom: 20px;
+            place-items: center;
+            /* object-fit: cover;
+            object-position: center; */
+            background-size: cover;
+            background-position: center center;
+            background-image: url('assets/img/food3.jpg');
+            overflow: hidden;
+            /* backdrop-filter: blur(12px); */
+            /* filter: blur(3px); */
+            
+            
+
+        }
+        .menu-section img{
+            position: relative;
+            width: 110%;
+            height: 110%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            /* background-size: cover;
+            background-position: center; */ 
+            /* filter: blur(12px);         */
+            /* backdrop-filter: blur(24px);    */
+        }
+        .menu-section .addblurfilter{
+            
+            position: absolute; 
+            top: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgb(164, 164, 173); */
+            /* backdrop-filter: blur(12px); */
+            /* filter: blur(10px); */
+            /* backdrop-filter: blur; */
+            /* background-color: hsla(0, 0%, 0%, .2); */
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 50;
+        }
+        .menu-section .menu-name{
+            text-align: center;
+            position: absolute;
+            top: 0;
+            z-index: 75;
+            color: azure;
+            width: 100%;
+            height: 100%;
+            place-items: center!important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        .fcard{
+            max-width: 12em;
+            width: 100%;
+            /* max-height: 250px; */
+            border-radius: 10px;
+            background-color: rgb(245 245 245);
+            padding-bottom: 20px;
+
+        }
+        .fimg{
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            object-fit: cover;
+            object-position: center;
+        }
+        .fimg img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .fdescription {
+            padding: 0 10px;
+            position: relative;
+        }
+        .fdescription .ftitle{
+            font-size: 1.2rem;
+            padding: 10px 0;
+        }
+        .fdescription .fprice{
+            font-size: 1.2rem;
+            text-align: center;
+            place-items: center;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+        
+        }
+        .fdescription .rate{
+            right: 10px;
+            top: 10px;
+            position: absolute;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgb(87, 87, 87);
+        }
+        .ftitle p{
+            font-size: 0.8rem;
+        }
+        .list{            
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            right: -100%;
+            width: 100vw;
+            height: 100%;
+            padding: 10px;
+            gap: 10px;
+            /* display: flex; */
+            /* justify-content: center;
+            flex-wrap: wrap; */
+            transition: right .5s;
+            /* overflow: hidden; */
+            overflow: auto;
+            
+        }
+        .show{
+            right: 0;
+        }
+        .row{
+            position: relative;
+            display: flex;
+            width: 100%;
+            gap: 20px;
+            padding-bottom: 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            overflow-y: auto;
+        }
+        .hide{
+            /* display: none; */
+            right: 0;
+        }
+        #closeList{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 150;
+            font-size: larger;
+            max-width: 40px ;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(210, 210, 235);
+        }
+        @media screen and (max-width: 430px) {
+            .ftitle{
+                font-size: 0.8rem!important;
+            }
+            .fprice{
+                font-size: 0.75rem!important;
+            }
+            .fcard{
+                max-width: 9rem;
+            }
+        }
+        .overflowHidden{
+            overflow: hidden!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="list" id="foodlist">
+            
+            <div class="row">
+                <div id="closeList">&leftarrow;</div>
+                <div class="fcard">
+                    <div class="fimg">
+                        <img src="assets/img/food4.jpg" alt="">
+                    </div>
+                    <div class="fdescription">
+                        <div class="ftitle"><h3>Lag'mon</h3><p>(Qovurma)</p></div>
+                        <div class="rate">4.8 *</div>
+                        <div class="fprice">16.000UZS</div>
+                    </div>
+                </div>
+                <div class="fcard">
+                    <div class="fimg">
+                        <img src="assets/img/food3.jpg" alt="">
+                    </div>
+                    <div class="fdescription">
+                        <div class="ftitle"><h3>Name</h3></div>
+                        <div class="fprice">16.000UZS</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="menu">
+            <div class="menu-section">
+                <img src="./assets/img/foodosh1.jpeg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Birinchi taomlar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodmastava.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Ikkinchi taomlar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodlagmon.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Uyg'ur taomlar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodqiymakabob.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Kaboblar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodsomsatovuqgosht.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Somsa</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/fooddamskiykapriz.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Salatlar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodichimliklarlogo.jpg" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Ichimliklar</h4></div>
+            </div>
+            <div class="menu-section">
+                <img src="./assets/img/foodnon.png" alt="">
+                <div class="addblurfilter"></div>
+                <div class="menu-name"><h4>Nonlar</h4></div>
+            </div>
+            <div class="menu-section">
+                <div class="addblurfilter"></div>
+            </div>
+            <!-- <div class="addblurfilter" ></div> -->
+        </div>
+    </div>
+    <script>
+        var items=[
+            [
+                ["Qaynatma sho'rva","","19.000","foodqovurmashorva.jpg"],
+                ["Mastava","","16.000","foodmastava.jpg"],
+                ["Ko'za sho'rva","","19.000","foodkozashorva.png"],
+                ["Hash","","19.000","foodhash.png"],
+                ["Kuk-si","","17.000","foodkuksi.jpg"],
+                ["Chuchvara","","16.000","foodchuchvara.webp"],
+                ["Okroshka","","14.000","foodokrashka.webp"],
+                ["Norin ports","","15.000","foodnorinports.jpg"],
+                ["Norin kg","","55.000","foodnorinkg.jpg"],
+                ["Mampar","","15.000","foodmampar.jpg"]
+            ],
+            [
+                ["To'y oshi","","39.000","foodtoyoshi.jpg"],
+                ["Osh 1 portsa","","28.000","foodosh1.jpeg"],
+                ["Osh 0.5 portsa","","16.000","foodosh2.jpg_large"],
+                ["Tovuq qozon kabob","","24.000","foodtovuqqozonkabob.jpg"],
+                ["Jiz","(qo'y go'shti)","36.000","foodjizqoygoshti.jpg"],
+                ["Jiz","(mol go'shti)","32.000","foodjizmolgoshti.webp"],
+                ["Tushyonka","","38.000","foodtushonka.webp"],
+                ["Nohat shurak","","24.000","foodnohatshurak.jpg"],
+                ["Moshkichiri","","21.000","foodmoshkichiri.png"],
+                ["Halim","","18.000","foodhalim.jpg"],
+                ["Hasib","","17.000","foodhasib.png"],
+                ["Manti","","5.000","foodmanti.webp"],
+                ["Xonim","","5.000","foodxonim.jpg"]
+            ],
+            [
+                ["Qovurma lag'mon","","21.000","foodqovurmalagmon.jpg"],
+                ["Tovuq", "say","26.000","foodtovuqsay.jpg"],
+                ["Ayrim say","","20.000","foodayrimsay.jpg"],
+                ["Ganfan","","20.000","foodganfan.webp"],
+                ["Lag'mon","","21.000","foodlagmon.jpg"]
+            ],
+            [
+                ["Jaz","kabob","13.000","foodjazkabob.webp"],
+                ["Qiyma","kabob","9.000","foodqiymakabob.jpg"],
+                ["Tovuq"," kabob","9.000","foodtovuqkabob.jpg"]
+            ],
+            [
+                ["Somsa","mol go'shti","10.000","foodsomsamolgosht.jpg"],
+                ["Somsa","tovuq go'shti","8.000","foodsomsatovuqgosht.jpg"],
+                ["Somsa","qovoq","6.000","foodsomsaqovoq.jpg"],
+                ["Somsa","tomchi","10.000","foodsomsatomchi.jpg"]
+
+
+            ],
+            [
+                ["Damskiy kapriz","","15.000","fooddamskiykapriz.jpg"],
+                ["Yaponskiy","","12.000","foodyaponskiy.jpeg"],
+                ["Vinegret","","8.000","foodvingert.jpg"],
+                ["Sveji assorti","","10.000","foodsvejiassorti.jpg"],
+                ["Achchiq-chuchuk","","8.000","foodachchiqchuchuk.jpg"],
+                ["Suzma","","6.000","foodsuzma.jpg"],
+                ["Qatiq stakan","","6.000","foodqatiqstakan.webp"],
+                ["Bahor","","8.000","foodbahor.jpg"],
+                ["Mujskiy kapriz","","16.000","foodmujiskiykapriz.jpg"],
+                ["Sayohat","","10.000","foodsayohat.jpeg"],
+                ["Mimoza","","13.000","foodmimoza.jpg"],
+                ["Svekolniy","","8.000","foodsvekliy.jpg"]
+
+            ],
+            [
+                ["Kompot grafin","","15.000","foodkompotgrafin.png"],
+                ["Kompot stakan","","3.000","foodkompotstakan.jpg"],
+                ["Pepsi 0.5l","","8.000","foodpepsi5l.jpg"],
+                ["Pepsi 1l","","14.000","foodpepsi10l.web"],
+                ["Pepsi 1.5l","","20.000","foodpepsi15.jpg"],
+                ["Coca-Cola 0.5l","","8.000","foodcocacola5l.jpeg"],
+                ["Coca-Cola 1l","","14.000","foodcocacola10l.jpeg"],
+                ["Coca-Cola 1.5l","","20.000","foodcocacola10l.jpeg"],
+                ["Fanta 0.5l","","8.000","foodfanta05l.jpg"],
+                ["Fanta 1l","","14.000","foodfanta10l.jpg"],
+                ["Fanta 1.5l","","20.000","foodfanta15l.jpg"]
+            ],
+            [
+                ["Non","","5.000","foodnon.png"],
+                ["Patir","","7.000","foodpatir.jpg"],
+                ["Go'shtli non","","9.000","foodgoshtlinon.jpg"],
+                ["Go'shtli patir","","12.000","foodgoshtlipatir.png"]
+
+            ]
+        ]
+        var menuSectionEls=document.querySelectorAll('.menu-section');
+        var x=menuSectionEls.length;
+        for(let i=0;i<x;i++){
+            menuSectionEls[i].addEventListener('click',()=>{
+                var foodlistEl=document.querySelector('#foodlist');
+                foodlistEl.classList.add('hide');
+                var y=items[i].length;
+                var z='<div class="main"><div class="row"><div id="closeList">&leftarrow;</div>';
+                console.log(items[0][0]); 
+                for(let j=0;j<y;j++){
+                    z+='<div class="fcard"><div class="fimg"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3>'+items[i][j][0]+'</h3></div><div class="fprice">'+items[i][j][2]+'</div></div></div>';
+                }
+                console.log('hi');
+                z+="</div></div>";
+                foodlistEl.innerHTML=z;
+                var mainEl=document.querySelector('body');
+                mainEl.classList.add('overflowHidden');
+                var closeListEl=document.querySelector('#closeList');
+                closeListEl.addEventListener('click',()=>{
+                    var foodlistEl=document.querySelector('#foodlist');
+                    foodlistEl.classList.remove('hide');
+                    closeListEl.classList.add('left10');
+                    var mainEl=document.querySelector('body');
+                    mainEl.classList.remove('overflowHidden');
+                });
+            });
+        }
+        var closeListEl=document.querySelector('#closeList');
+        closeListEl.addEventListener('click',()=>{
+            var foodlistEl=document.querySelector('#foodlist');
+            foodlistEl.classList.add('hide');
+            closeListEl.classList.remove('left10');
+            var mainEl=document.querySelector('body');
+            mainEl.classList.remove('overflowHidden');
+        });
+    </script>
+</body>
+</html>

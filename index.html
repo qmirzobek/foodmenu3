@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 2.0</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/new.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <section class="homeScreen">
+        <div class="logo"><img src="assets/img/logo3.png" alt=""><h4 class="logText">Milliy taomlar</h4></div>
+        <span style="padding: 0px 20px">
+            <a href="menu.html"><button class="logButton"><span>Menuga kirish</span></button></a>
+        </span>
+    </section>
+    <script>
+        function showLog(){
+            var logEl=document.querySelector('.logo');
+            logEl.classList.add('idk1');
+            var logEl=document.querySelector('.logButton');
+            logEl.classList.add('logButtonShow');
+        }
+        var time=setTimeout(() => {
+            showLog();
+        }, 2000);
+    </script>
+</body>
+</html>
