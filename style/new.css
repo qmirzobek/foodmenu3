@@ -259,7 +259,7 @@ body{
     background: linear-gradient(#008dd2, #008dd2) padding-box,
       linear-gradient(to right, #f7e600, #feffff) border-box;
       box-shadow: 0px 2px 6px #333333c7;
-    transition: bottom 2s;
+    transition: bottom 1s;
     /* border-image: linear-gradient(white, white) padding-box, linear-gradient(to right, #f7e600, #ffffff) border-box; */
     
 }
@@ -277,11 +277,13 @@ body{
     font-size: 1rem;
     
 }
-@media screen and (max-width: 410px){
+/* @media screen and (max-width: 420px){
+    .logButton span{
+        font-size: 0.7rem;
+    }
+} */
+/* @media screen and (max-width: 320px){
     .logButton{
         width: 80%;
     }
-    .logButton span{
-        font-size: 0.8rem;
-    }
-}
+} */
