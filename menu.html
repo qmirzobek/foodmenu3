@@ -241,18 +241,34 @@
             /* display: none; */
             right: 0;
         }
+        #closeList .bi::before{
+            font-weight: 900!important;
+        }
         #closeList{
             /* position: absolute; */
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             /* top: 10px;
             left: 10px; */
             z-index: 150;
             font-size: larger;
-            max-width: 40px ;
+            width: 40px!important;
+            height: 40px!important;
+            color: #008dd2;
+            /* font-size: 20px; */
+            place-items: center;
+            font-weight: 900;
             padding: 8px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 4px #33333391;
+            border-radius: 20px;
+            background-color: #d9d9d9;
+            box-shadow: 0px 2px 4px #3333336e;
             /* background-color: rgb(210, 210, 235); */
+        }
+        #closeList i{
+            font-size: 20px;
+            font-weight: 900!important;
         }
         @media screen and (max-width: 430px) {
             .ftitle{
@@ -458,9 +474,6 @@
                 <div class="addblurfilter"></div>
                 <div class="menu-name"><h4>Nonlar</h4></div>
             </div>
-            <div class="menu-section">
-                <div class="addblurfilter"></div>
-            </div>
             <!-- <div class="addblurfilter" ></div> -->
         </div>
     </div>
@@ -486,19 +499,19 @@
                 ["Kuk-si","","17.000","foodkuksi.jpg"],
                 ["Chuchvara","","16.000","foodchuchvara.webp"],
                 ["Okroshka","","14.000","foodokrashka.webp"],
-                ["Norin ports","","15.000","foodnorinports.jpg"],
-                ["Norin kg","","55.000","foodnorinkg.jpg"],
+                ["Norin","1 ports","15.000","foodnorinports.jpg"],
+                ["Norin","1kg","55.000","foodnorinkg.jpg"],
                 ["Mampar","","15.000","foodmampar.jpg"]
             ],
             [
-                ["To'y oshi","","39.000","foodtoyoshi.jpg"],
-                ["Osh 1 portsa","","28.000","foodosh1.jpeg"],
-                ["Osh 0.5 portsa","","16.000","foodosh2.jpg_large"],
-                ["Tovuq qozon kabob","","24.000","foodtovuqqozonkabob.jpg"],
+                ["Osh","to'y","39.000","foodtoyoshi.jpg"],
+                ["Osh","1 portsa","28.000","foodosh1.jpeg"],
+                ["Osh","0.5 portsa","16.000","foodosh2.jpg_large"],
+                ["Qozon kabob","tovuq","24.000","foodtovuqqozonkabob.jpg"],
                 ["Jiz","qo'y go'shti","36.000","foodjizqoygoshti.jpg"],
                 ["Jiz","mol go'shti","32.000","foodjizmolgoshti.webp"],
                 ["Tushyonka","","38.000","foodtushonka.webp"],
-                ["Nohat shurak","","24.000","foodnohatshurak.jpg"],
+                ["Nohat","shurak","24.000","foodnohatshurak.jpg"],
                 ["Moshkichiri","","21.000","foodmoshkichiri.png"],
                 ["Halim","","18.000","foodhalim.jpg"],
                 ["Hasib","","17.000","foodhasib.png"],
@@ -506,16 +519,16 @@
                 ["Xonim","","5.000","foodxonim.jpg"]
             ],
             [
-                ["Qovurma lag'mon","","21.000","foodqovurmalagmon.jpg"],
+                ["Lag'mon","qovurma","21.000","foodqovurmalagmon.jpg"],
                 ["Tovuq", "say","26.000","foodtovuqsay.jpg"],
-                ["Ayrim say","","20.000","foodayrimsay.jpg"],
+                ["Ayrim","say","20.000","foodayrimsay.jpg"],
                 ["Ganfan","","20.000","foodganfan.webp"],
                 ["Lag'mon","","21.000","foodlagmon.jpg"]
             ],
             [
                 ["Jaz","kabob","13.000","foodjazkabob.webp"],
                 ["Qiyma","kabob","9.000","foodqiymakabob.jpg"],
-                ["Tovuq"," kabob","9.000","foodtovuqkabob.jpg"]
+                ["Tovuq","kabob","9.000","foodtovuqkabob.jpg"]
             ],
             [
                 ["Somsa","mol go'shti","10.000","foodsomsamolgosht.jpg"],
@@ -541,23 +554,23 @@
 
             ],
             [
-                ["Kompot grafin","","15.000","foodkompotgrafin.png"],
-                ["Kompot stakan","","3.000","foodkompotstakan.jpg"],
-                ["Pepsi 0.5l","","8.000","foodpepsi5l.jpg"],
-                ["Pepsi 1l","","14.000","foodpepsi10l.web"],
-                ["Pepsi 1.5l","","20.000","foodpepsi15.jpg"],
-                ["Coca-Cola 0.5l","","8.000","foodcocacola5l.jpeg"],
-                ["Coca-Cola 1l","","14.000","foodcocacola10l.jpeg"],
-                ["Coca-Cola 1.5l","","20.000","foodcocacola10l.jpeg"],
-                ["Fanta 0.5l","","8.000","foodfanta05l.jpg"],
-                ["Fanta 1l","","14.000","foodfanta10l.jpg"],
-                ["Fanta 1.5l","","20.000","foodfanta15l.jpg"]
+                ["Kompot","grafin","15.000","foodkompotgrafin.png"],
+                ["Kompot","stakan","3.000","foodkompotstakan.jpg"],
+                ["Pepsi","0.5l","8.000","foodpepsi5l.jpg"],
+                ["Pepsi","1l","14.000","foodpepsi10l.web"],
+                ["Pepsi","1.5l","20.000","foodpepsi15.jpg"],
+                ["Coca-Cola","0.5l","8.000","foodcocacola5l.jpeg"],
+                ["Coca-Cola","1l","14.000","foodcocacola10l.jpeg"],
+                ["Coca-Cola","1.5l","20.000","foodcocacola10l.jpeg"],
+                ["Fanta","0.5l","8.000","foodfanta05l.jpg"],
+                ["Fanta","1l","14.000","foodfanta10l.jpg"],
+                ["Fanta","1.5l","20.000","foodfanta15l.jpg"]
             ],
             [
                 ["Non","","5.000","foodnon.png"],
                 ["Patir","","7.000","foodpatir.jpg"],
-                ["Go'shtli non","","9.000","foodgoshtlinon.jpg"],
-                ["Go'shtli patir","","12.000","foodgoshtlipatir.png"]
+                ["Non","go'shtli","9.000","foodgoshtlinon.jpg"],
+                ["Patir","go'shtli","12.000","foodgoshtlipatir.png"]
 
             ]
         ]
@@ -568,14 +581,14 @@
                 var foodlistEl=document.querySelector('#foodlist');
                 foodlistEl.classList.add('hide');
                 var y=items[i].length;
-                var z='<div class="main"><div class="goBackMenu addblurfilter"><div id="closeList">&leftarrow;</div><span class="original-surfer-regular" style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
+                var z='<div class="main"><div class="goBackMenu addblurfilter"><div id="closeList"><i class="bi bi-arrow-left"></i></div><span style="color: #f7e600; font-size: 30px;letter-spacing:5px;-webkit-text-stroke: 0.5px black;">O\'zbegim</span><span class="original-surfer-regular" style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
                 console.log(items[0][0]); 
                 for(let j=0;j<y;j++){
                     var extraName="";
                     if((items[i][j][1].length>2)){
                         extraName='('+items[i][j][1]+')';
                     }                        
-                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed">'+extraName+'</span></h3><div class="fprice">'+items[i][j][2]+'</div></div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
+                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed"> '+extraName+'</span></h3><div class="fprice">'+items[i][j][2]+'</div></div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
                 }
                 console.log('hi');
                 z+="</div></div>";
