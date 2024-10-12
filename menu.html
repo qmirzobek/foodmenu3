@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/bootstrap-icons/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Original+Surfer&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75,300;1,75,300&family=Original+Surfer&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75,300;1,75,300&family=Original+Surfer&family=Poiret+One&display=swap" rel="stylesheet">
     <title>Version 2.0</title>
     <style>
         *{
@@ -11,6 +18,33 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+        }
+        .original-surfer-regular {
+            font-family: "Original Surfer", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+        .open-sans-classic {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+        .open-sans-condensed {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 75;
+            }
+
+        .poiret-one-regular {
+            font-family: "Poiret One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
         body{
             /* background-color: rgb(255, 255, 255); */
@@ -94,7 +128,7 @@
         }
         .fcard{
             /* max-width: 12em; */
-            width: 45%!important;
+            width: 48%!important;
 
             /* max-height: 250px; */
             border-radius: 20px;
@@ -102,6 +136,7 @@
             padding-bottom: 20px;
             box-shadow: 0px 2px 1px #44444466;
             /* backdrop-filter: blur(16px); */
+            margin-bottom: 10px;
 
         }
         .fimg{
@@ -154,11 +189,12 @@
             color: #fff;
         }
         .ftiming{
-            font-size: 0.75rem;
+            font-weight: 100;
+            font-size: 0.5rem;
             color: #fff;
         }
         .ftitle h3{
-            font-weight: 100;
+            font-weight: 100!important;
             font-size: 1rem;
             color: #fff;
         }
@@ -176,8 +212,8 @@
             right: -200%;
             width: 100vw;
             height: 100%;
-            padding: 10px;
-            gap: 10px;
+            /* padding: 10px; */
+            /* gap: 6px; */
             /* display: flex; */
             /* justify-content: center;
             flex-wrap: wrap; */
@@ -193,7 +229,8 @@
             position: relative;
             display: flex;
             width: 100%;
-            gap: 20px;
+            gap: 10px;
+            padding: 10px;
             padding-bottom: 40px;
             flex-direction: row;
             flex-wrap: wrap;
@@ -237,7 +274,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding: 10px;
+            /* padding: 10px; */
             margin-bottom: 20px;
         }
         .searchItems input{
@@ -249,7 +286,7 @@
             background-color: #d9d9d9;
             color: #008dd2;
             height: 40px;
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
         .searchItems input::placeholder{
             color: #008dd2;
@@ -307,9 +344,38 @@
             width: 100%;
             border-radius: 20px;
         }
+        .goBackMenu{
+            width: 100%;
+            position: sticky;
+            top: 0!important;
+            z-index: 400;
+            width: 100%; 
+            padding: 10px;
+            background-color: #d5dde29c;
+            color:#fff; 
+            display:flex; 
+            justify-content:space-between;
+        }
+        .goBackMenu.addblurfilter{
+            /* position: absolute;  */
+            /* top: 0; */
+            /* width: 100%; */
+            /* height: 100%; */
+            /* background-color: rgb(164, 164, 173); */
+            /* backdrop-filter: blur(12px); */
+            /* filter: blur(10px); */
+            /* backdrop-filter: blur; */
+            /* background-color: hsla(0, 0%, 0%, .2); */
+            backdrop-filter: blur(8px)!important;
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .extraName{
+            font-size: .5rem;
+            font-weight: 100;
+        }
     </style>
 </head>
-<body>
+<body class="open-sans-classic">
     <div class="fmodal">
         <div class="fModalImg">
             <img src="assets/img/food3.jpg" alt="">
@@ -502,14 +568,14 @@
                 var foodlistEl=document.querySelector('#foodlist');
                 foodlistEl.classList.add('hide');
                 var y=items[i].length;
-                var z='<div class="main"><div style="width: 100%; padding: 10px;color:#fff; display:flex; justify-content:space-between;"><div id="closeList">&leftarrow;</div><span style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
+                var z='<div class="main"><div class="goBackMenu addblurfilter"><div id="closeList">&leftarrow;</div><span class="original-surfer-regular" style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
                 console.log(items[0][0]); 
                 for(let j=0;j<y;j++){
                     var extraName="";
                     if((items[i][j][1].length>2)){
                         extraName='('+items[i][j][1]+')';
                     }                        
-                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3>'+items[i][j][0]+'<p>'+extraName+'</p></h3><div class="fprice">'+items[i][j][2]+'</div></div><p class="ftiming">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
+                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed">'+extraName+'</span></h3><div class="fprice">'+items[i][j][2]+'</div></div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
                 }
                 console.log('hi');
                 z+="</div></div>";
