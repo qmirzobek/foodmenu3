@@ -165,12 +165,14 @@
             align-items: center;
             font-size: 1.2rem;
             padding: 10px 0;
+            padding-bottom: 0!important;
         }
         .fdescription .fprice{
             font-size: 1.2rem;
             text-align: end;
             place-items: center;
             /* border-radius: 10px; */
+            padding-top: 0px!important;
             padding: 10px;
             color: #fff;
             /* background-color: rgb(255, 255, 255); */
@@ -589,7 +591,7 @@
                     if((items[i][j][1].length>2)){
                         extraName='('+items[i][j][1]+')';
                     }                        
-                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed"> '+extraName+'</span></h3><div class="fprice">'+items[i][j][2]+'</div></div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
+                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed"> '+extraName+'</span></h3></div><div class="fprice">'+items[i][j][2]+'</div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
                 }
                 console.log('hi');
                 z+="</div></div>";
