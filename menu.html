@@ -231,6 +231,7 @@
             width: 100%;
             gap: 10px;
             padding: 10px;
+            padding-top: 80px!important;
             padding-bottom: 40px;
             flex-direction: row;
             flex-wrap: wrap;
@@ -362,7 +363,7 @@
         }
         .goBackMenu{
             width: 100%;
-            position: sticky;
+            position: fixed;
             top: 0!important;
             z-index: 400;
             width: 100%; 
@@ -581,7 +582,7 @@
                 var foodlistEl=document.querySelector('#foodlist');
                 foodlistEl.classList.add('hide');
                 var y=items[i].length;
-                var z='<div class="main"><div class="goBackMenu addblurfilter"><div id="closeList"><i class="bi bi-arrow-left"></i></div><span style="color: #f7e600; font-size: 30px;letter-spacing:5px;-webkit-text-stroke: 0.5px black;">O\'zbegim</span><span class="original-surfer-regular" style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
+                var z='<div class="main"><div class="goBackMenu addblurfilter"><div id="closeList"><i class="bi bi-arrow-left"></i></div><span style="color: #f7e600; font-size: 30px;font-weight:700;letter-spacing:5px;-webkit-text-stroke: 0.25px black;">O\'zbegim</span><span class="original-surfer-regular" style="padding: 10px; font-size: 1rem;">Milliy taomlar</span></div><div class="row">';
                 console.log(items[0][0]); 
                 for(let j=0;j<y;j++){
                     var extraName="";
