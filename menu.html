@@ -168,6 +168,8 @@
             padding-bottom: 0!important;
         }
         .fdescription .fprice{
+            display: flex;
+            align-items: center;
             font-size: 1.2rem;
             text-align: end;
             place-items: center;
@@ -191,8 +193,13 @@
             color: #fff;
         }
         .ftiming{
+            /* padding-top: 10px; */
+            position: flex-start;
             font-weight: 100;
             font-size: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
             color: #fff;
         }
         .ftitle h3{
@@ -392,9 +399,34 @@
             font-size: .5rem;
             font-weight: 100;
         }
+        .screenSplash{
+            display: none;
+        }
+        
+        @media screen and (min-width: 620px){
+            .screenSplash{
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: #008dd2;
+                color: #fff;
+                z-index: 1100;
+                font-size: 2rem;
+                padding: 10vh 30vw;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body class="open-sans-classic">
+    <div class="screenSplash">
+        <p>Mobile telefonlar orqali kiring!</p>
+    </div>
     <div class="fmodal">
         <div class="fModalImg">
             <img src="assets/img/food3.jpg" alt="">
@@ -591,7 +623,7 @@
                     if((items[i][j][1].length>2)){
                         extraName='('+items[i][j][1]+')';
                     }                        
-                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed"> '+extraName+'</span></h3></div><div class="fprice">'+items[i][j][2]+'</div><p class="ftiming poiret-one-regular">(Tayyor bo\'lish vaqti 10 daqiqa)</p></div></div>';
+                    z+='<div class="fcard"><div class="fimg" onclick="showFModal(\''+items[i][j][3]+'\')"><img src="assets/img/'+items[i][j][3]+'" alt=""></div><div class="fdescription"><div class="ftitle"><h3 class="open-sans-condensed">'+items[i][j][0]+'<span class="extraName open-sans-condensed"> '+extraName+'</span></h3></div><div class="fprice"><p class="ftiming poiret-one-regular"><i class="bi bi-clock"></i>10 daqiqa</p> '+items[i][j][2]+'</div></div></div>';
                 }
                 console.log('hi');
                 z+="</div></div>";
